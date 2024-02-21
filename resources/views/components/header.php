@@ -1,4 +1,4 @@
-<?php require_once '../../../config/config.php'; ?>
+<?php require_once 'C:\laragon\www\storingapp\config\config.php'; ?>
 
 <header>
     <div class="container">
