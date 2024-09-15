@@ -1,0 +1,439 @@
+/* ---------------------------------- */
+/*            Section Styles          */
+/* ---------------------------------- */
+
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* ---------------------------------- */
+/*            Block Content           */
+/* ---------------------------------- */
+
+.block-content {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 2rem;
+  background-color: var(--white-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------- */
+/*            Events Section          */
+/* ---------------------------------- */
+
+.events {
+  display: flex;
+  overflow-x: auto;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.block-content.events {
+  position: relative;
+}
+
+.events-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.events-slides-content {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+}
+
+.events-slide {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: 300px;
+  scroll-snap-align: start;
+  gap: 0.5rem;
+  justify-content: space-between;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background-color: var(--other-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden; /* Ensure child elements don't overflow */
+}
+
+.events-slide:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------------------------- */
+/*            Slide Arrows            */
+/* ---------------------------------- */
+
+.slide-arrow {
+  background-color: var(--secondary-color);
+  border: none;
+  color: var(--white-color);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.slide-arrow:hover {
+  background-color: var(--main-color);
+}
+
+.left-arrow {
+  left: -1.5rem;
+}
+
+.right-arrow {
+  right: -1.5rem;
+}
+
+/* ---------------------------------- */
+/*            Education Slides        */
+/* ---------------------------------- */
+/* Adjustments for Education Slides Grid */
+.educatie-slides-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Adjust column width as needed */
+  gap: 1.5rem; /* Adjust gap between grid items */
+  padding: 1rem; /* Optional: Add padding around the grid */
+}
+
+/* Existing CSS styles for slides and modals are already included */
+
+.educatie-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Adjust space between elements inside the slide */
+    padding: 1.5rem; /* Increase padding for better spacing */
+    border-radius: 20px;
+    background-color: var(--white-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.educatie-slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.educatie-slide:hover .slide-button {
+    background-color: var(--main-color);
+}
+
+.educatie-slide .slide-info {
+    overflow: hidden; /* Ensure child elements don't overflow */
+    border-radius: 20px;
+}
+
+.educatie-slide .educatie-slide-img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.educatie-slide .event-slide-text {
+    padding: 1rem;
+    background-color: var(--white-color);
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+}
+
+.educatie-slide .event-slide-text h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.educatie-slide .event-slide-text p {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.educatie-slide .slide-button {
+    all: unset;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.75rem 0;
+    color: var(--white-color);
+    font-weight: 800;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+
+/* ---------------------------------- */
+/*            Image Styles            */
+/* ---------------------------------- */
+
+.educatie-slide .educatie-slide-img,
+.events-slide img {
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.image-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-carousel img {
+  display: none;
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.image-carousel img.active {
+  display: block;
+}
+
+/* ---------------------------------- */
+/*            Event Text              */
+/* ---------------------------------- */
+
+.event-slide-text {
+  padding: 1rem;
+  background-color: var(--white-color);
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+}
+
+.event-slide-text h4 {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.event-slide:hover .event-slide-text {
+  color: var(--main-color);
+}
+
+.event-slide-text p {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+/* ---------------------------------- */
+/*            Event Button            */
+/* ---------------------------------- */
+
+.eventsText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-button {
+  all: unset;
+  width: 100%;
+  border-radius: 8px;
+  padding: 0.75rem 0;
+  color: var(--white-color);
+  font-weight: 800;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.slide-button:hover {
+  background-color: var(--main-color);
+}
+
+.events-slide:hover .slide-button,
+.events-slide:focus .slide-button {
+  background-color: var(--main-color);
+}
+
+/* ---------------------------------- */
+/*            Modal Styles            */
+/* ---------------------------------- */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 1000px;
+  max-height: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
+}
+
+.modal-info {
+  display: flex;
+  flex-direction: row;
+  max-height: 100%;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.modal-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modal-image {
+  flex: 1;
+}
+
+.modal-image img {
+  max-width: 100%;
+  object-fit: contain;
+  height: auto;
+  border-radius: 10px;
+}
+
+.modal-text {
+  flex: 2;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------------------------------- */
+/*            Content Styles          */
+/* ---------------------------------- */
+
+.content {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.content h1 {
+  color: #333;
+  text-align: center;
+}
+
+.content p {
+  margin: 10px 0;
+}
+
+.content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.content ul li {
+  margin: 10px 0;
+}
+
+.content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+
+/* ---------------------------------- */
+/*        Responsive Styles           */
+/* ---------------------------------- */
+
+@media screen and (max-width: 1000px) {
+  .modal-content {
+    padding: 20px;
+  }
+  .modal-info {
+    flex-direction: column;
+  }
+  .modal-image {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .educatie-slides-content {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .events-slides-content,
+  .educatie-slides-content {
+    align-items: center;
+  }
+
+  .events-slide,
+  .educatie-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    margin: 0 auto;
+  }
+}
